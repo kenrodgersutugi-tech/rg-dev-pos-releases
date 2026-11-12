@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RG Devs Point of Sale — Setup guide</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 20mm; }
+  :root { --brand: #0b6e4f; --soft: #e3f2ec; --ink: #14181d; --muted: #5b6673; --line: #dfe5e2; }
+  * { box-sizing: border-box; }
+  body { font: 10.5pt/1.55 'Segoe UI', system-ui, Arial, sans-serif; color: var(--ink); margin: 0; }
+  h1 { font-size: 22pt; margin: 0 0 6pt; }
+  h2 { font-size: 15pt; color: var(--brand); margin: 0 0 8pt; padding-bottom: 4pt; border-bottom: 2px solid var(--soft); }
+  h3 { font-size: 11.5pt; margin: 12pt 0 4pt; }
+  p { margin: 0 0 7pt; }
+  ol, ul { margin: 0 0 8pt; padding-left: 16pt; }
+  li { margin-bottom: 3pt; }
+  .chapter { page-break-before: always; }
+  .shot { border: 1px solid var(--line); border-radius: 6px; margin: 8pt 0 4pt; width: 100%; }
+  .cap { font-size: 8.5pt; color: var(--muted); margin: 0 0 10pt; }
+  .tip { background: var(--soft); border-left: 4px solid var(--brand); padding: 7pt 10pt; border-radius: 4px; margin: 8pt 0; }
+  .warn { background: #fff4d6; border-left: 4px solid #c48a00; padding: 7pt 10pt; border-radius: 4px; margin: 8pt 0; }
+  .key { display: inline-block; border: 1px solid #c9d2cd; border-bottom-width: 2px; border-radius: 4px; padding: 0 4pt; font-size: 9pt; background: #fafafa; }
+  table { border-collapse: collapse; width: 100%; margin: 6pt 0 10pt; font-size: 9.5pt; }
+  th, td { border-bottom: 1px solid var(--line); text-align: left; padding: 4pt 5pt; vertical-align: top; }
+  th { background: var(--soft); }
+  /* Cover */
+  .cover { height: 255mm; display: flex; flex-direction: column; justify-content: space-between; }
+  .cover-top { background: var(--brand); color: #fff; border-radius: 10px; padding: 26mm 16mm 18mm; }
+  .cover-top img { width: 26mm; height: 26mm; border-radius: 6mm; background: #fff; padding: 2mm; }
+  .cover-top h1 { color: #fff; font-size: 30pt; margin: 10mm 0 3mm; }
+  .cover-top p { font-size: 13pt; opacity: 0.92; margin: 0; }
+  .cover-shot { margin: 10mm 0; border-radius: 8px; border: 1px solid var(--line); width: 100%; }
+  .cover-foot { display: flex; justify-content: space-between; color: var(--muted); font-size: 9.5pt; border-top: 1px solid var(--line); padding-top: 4mm; }
+  .toc li { margin-bottom: 4pt; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="cover-top">
+    <img src="../docs/assets/img/icon-512.png" alt="">
+    <h1>Setup guide</h1>
+    <p>RG Devs Point of Sale — install, activate and start selling</p>
+  </div>
+  <img class="cover-shot" src="../docs/assets/img/till.jpg" alt="">
+  <div class="cover-foot"><span><b>RG Devs</b> · Meru, Kenya · rgdev.ke@gmail.com</span><span>Version 1.8 · November 2026</span></div>
+</section>
+
+<section class="chapter">
+  <h2>Contents</h2>
+  <ol class="toc">
+    <li>What you need</li>
+    <li>Install on the main computer</li>
+    <li>Activate: free trial, buy with M-Pesa, or a licence key</li>
+    <li>First-run setup</li>
+    <li>Products and stock</li>
+    <li>Staff, managers and approvals</li>
+    <li>Making a sale and printing receipts</li>
+    <li>M-Pesa at the till</li>
+    <li>Connecting other computers (stations)</li>
+    <li>Backups — please don't skip</li>
+    <li>Reports</li>
+    <li>Your licence and updates</li>
+    <li>Troubleshooting and support</li>
+  </ol>
+  <div class="tip"><b>How it works in one sentence:</b> one computer in the shop — the <b>main computer</b> — holds all the data and runs the
+  system; any other computer on the same Wi-Fi or cable network can sell, using Chrome or Edge, without installing anything.</div>
+
+  <h2 style="margin-top:16pt">1. What you need</h2>
+  <table>
+    <tr><th>Item</th><th>Details</th></tr>
+    <tr><td>Main computer</td><td>Windows 10 or 11, 64-bit, 4 GB RAM or more. It should be switched on during business hours — the other computers depend on it.</td></tr>
+    <tr><td>Internet</td><td>Once, to activate (a phone hotspot is fine). Afterwards only for buying more licence time, M-Pesa prompts, off-site backups and updates.</td></tr>
+    <tr><td>Other computers (optional)</td><td>Any Windows computer with Chrome or Edge on the same network.</td></tr>
+    <tr><td>Receipt printer (optional)</td><td>A 58 mm or 80 mm thermal printer installed in Windows, or any A4 printer for invoices.</td></tr>
+    <tr><td>Barcode scanner (optional)</td><td>Any USB scanner that types like a keyboard.</td></tr>
+    <tr><td>For backups</td><td>A Google account with Google Drive for desktop, OneDrive, or a USB drive you take home.</td></tr>
+  </table>
+</section>
+
+<section class="chapter">
+  <h2>2. Install on the main computer</h2>
+  <ol>
+    <li>Download the installer from the RG Devs Point of Sale website (<i>Download for Windows</i>), or copy it from a flash drive.</li>
+    <li>Double-click <b>RG Dev POS Setup.exe</b>. If Windows shows <i>“Windows protected your PC”</i>, click <b>More info</b>, then <b>Run anyway</b>.</li>
+    <li>Choose <b>Yes</b> when Windows asks for permission. This lets the installer set up the network rule that other computers need.</li>
+    <li>When it finishes, RG Devs Point of Sale opens by itself. From now on it starts with Windows and sits by the clock (system tray).</li>
+  </ol>
+  <div class="tip">Closing the window does not close the program — it keeps running by the clock so other computers stay connected. To quit
+  completely, right-click its icon by the clock and choose <b>Quit</b>.</div>
+
+  <h2 style="margin-top:14pt">3. Activate</h2>
+  <p>The first screen asks how you want to licence this computer. The computer must be online for this step.</p>
+  <img class="shot" src="../docs/assets/img/activate.jpg" alt="">
+  <p class="cap">The activation screen: enter a key, buy with M-Pesa, or start a free trial.</p>
+  <ul>
+    <li><b>Start a free 14-day trial</b> — everything works, no payment details. One trial per computer.</li>
+    <li><b>Buy with M-Pesa</b> — choose a plan, type the M-Pesa number and press <b>Pay</b>. Enter your M-Pesa PIN on the phone; the licence
+      switches on by itself within a minute.</li>
+    <li><b>Licence key</b> — if you bought from RG Devs directly, type the key (RGPOS-XXXXX-…) and press <b>Activate</b>.</li>
+  </ul>
+</section>
+
+<section class="chapter">
+  <img class="shot" src="../docs/assets/img/buy.jpg" alt="">
+  <p class="cap">Buying in the app: 1 week KES 300 · 1 month KES 700 · 12 months KES 7,000 · Lifetime KES 30,000.</p>
+
+  <h2 style="margin-top:12pt">4. First-run setup</h2>
+  <ol>
+    <li><b>Type of business</b> — General retail (shops, hardware) or Healthcare (chemists, clinics), then the description that fits best. This
+      decides the add-ons and roles you get, and how many computers the shop needs.</li>
+    <li><b>Business details</b> — name, phone, address and KRA PIN print on receipts. Say whether you charge VAT (you can change this later in
+      <i>Settings → Tax</i>).</li>
+    <li><b>Owner account</b> — your name, a username and a password of at least 8 characters.</li>
+    <li><b>Recovery key</b> — write it on paper and keep it away from the computer. It is the only way to reset the owner password at this
+      computer if it is forgotten.</li>
+  </ol>
+  <div class="warn">If setup says Windows treats the network as <b>Public</b>, open <i>Windows Settings → Network &amp; internet → Wi-Fi (or
+  Ethernet) → your network → Network profile type</i> and choose <b>Private</b>. Otherwise other computers cannot connect.</div>
+</section>
+
+<section class="chapter">
+  <h2>5. Products and stock</h2>
+  <h3>Try it with sample products</h3>
+  <p><i>Settings → About → Add sample products</i> adds 20 everyday items with prices and stock, so you can practise a sale straight away. You can
+  edit or deactivate them later.</p>
+  <h3>Add your own</h3>
+  <ol>
+    <li><i>Inventory → New product</i>. Start with the smallest unit you sell (piece, tablet, kg), then add bigger packs and how many small units
+      they hold — for example, a crate holds 24 bottles.</li>
+    <li>Set a price for each unit you sell. Untick <i>Sold at the till</i> for packs you only buy in.</li>
+    <li>Scan the barcode into the product if it has one.</li>
+    <li>Receive opening stock: open the product in <i>Inventory</i> and press <b>Receive delivery</b>, entering the cost, so profit reports are right.</li>
+  </ol>
+  <p>Many products? <i>Inventory → Import from spreadsheet</i> accepts an Excel or CSV sheet; download the template, fill it in and preview before saving.</p>
+  <img class="shot" src="../docs/assets/img/inventory.jpg" alt="">
+  <p class="cap">Inventory: products, stock levels and prices.</p>
+
+  <h2 style="margin-top:12pt">6. Staff, managers and approvals</h2>
+  <ul>
+    <li><i>Staff → New staff account</i> for each person; choose <b>Cashier</b> or <b>Manager</b>. They set their own password on first sign-in.</li>
+    <li>Give managers a quick <b>PIN</b> (<i>Settings → My account</i>). When a cashier needs a void, refund or a big discount, the manager picks
+      their name on the cashier's screen and types the PIN — the cashier stays signed in, and both names are recorded.</li>
+    <li>Every void, refund, discount and price change is in the <b>audit log</b> and the <b>Controls report</b>.</li>
+  </ul>
+</section>
+
+<section class="chapter">
+  <h2>7. Making a sale and printing receipts</h2>
+  <ol>
+    <li>Open <b>Till</b>. Scan a barcode, search, or tap a product's price button (e.g. <i>bottle · 60.00</i>).</li>
+    <li>Change the quantity or unit in the sale list if needed. Choose a customer for credit or special prices (optional).</li>
+    <li>Press <b>Charge</b>, choose Cash, M-Pesa or Card, enter the amount received and press <b>Complete sale</b>.</li>
+    <li>Print the receipt. The first time, choose your thermal printer in the Windows print window and tick that it should be remembered.</li>
+  </ol>
+  <img class="shot" src="../docs/assets/img/till.jpg" alt="">
+  <p class="cap">The till: products on the left, the current sale and total on the right.</p>
+  <img class="shot" src="../docs/assets/img/payment.jpg" alt="">
+  <p class="cap">Payment: split payments are allowed; change is calculated for you.</p>
+  <div class="tip">Paper width (58 or 80 mm) and what appears on the receipt are set in <i>Settings → Business</i>. No printer? Choose
+  <i>Microsoft Print to PDF</i> to save the receipt.</div>
+</section>
+
+<section class="chapter">
+  <h2>8. M-Pesa at the till</h2>
+  <p>Without any setup, choose <b>M-Pesa</b> as the payment and type the code from the customer's M-Pesa message.</p>
+  <p>To send the payment prompt straight to the customer's phone, connect your own Safaricom Daraja account in <i>Settings → M-Pesa</i>:
+  Consumer Key, Consumer Secret, Passkey, and your Paybill or Till (with store number). Press <b>Test connection</b>. A payment then counts only
+  after Safaricom confirms it.</p>
+  <div class="tip">Your Daraja keys are stored encrypted on the main computer only — never on station computers, and never sent to RG Devs.</div>
+
+  <h2 style="margin-top:12pt">9. Connecting other computers (stations)</h2>
+  <ol>
+    <li>Connect the other computer to the same Wi-Fi or network as the main computer.</li>
+    <li>On the main computer open <i>Settings → Stations</i>. It shows the setup address, for example <b>http://rgpos.local:4781</b>.</li>
+    <li>On the other computer, open that address in Chrome or Edge, download and run the small <b>station setup</b>. When Windows asks to install
+      the shop's certificate, check the thumbprint matches the one on the main computer, then choose <b>Yes</b>.</li>
+    <li>Open the POS link, type a name for the station (e.g. <i>Counter 2</i>) and note the <b>6-digit code</b>.</li>
+    <li>On the main computer, type the code under <i>Approve a new station</i> and press <b>Approve</b>.</li>
+    <li>On the station, use the browser menu → <i>Install app</i> so it opens like a program.</li>
+  </ol>
+  <img class="shot" src="../docs/assets/img/stations.jpg" alt="">
+  <p class="cap">Settings → Stations: approve new computers and choose who may sign in at each.</p>
+  <div class="warn">Station can't connect? Make sure the network is <b>Private</b> (section 4) and, if Windows asked about the firewall on the main
+  computer, that <b>Private networks</b> was allowed. Ask for a fixed (reserved) address for the main computer on your router so it never changes.</div>
+</section>
+
+<section class="chapter">
+  <h2>10. Backups — please don't skip</h2>
+  <p>The system copies your data every hour (when something changed), every day, week and month, on the main computer. To survive a dead or
+  stolen computer you also need an <b>off-site</b> copy:</p>
+  <ol>
+    <li><i>Settings → Backup → Set backup password.</i> Write it down and keep it away from the shop. <b>Without it no one — not even RG Devs — can
+      open your backups.</b></li>
+    <li>Install <b>Google Drive for desktop</b> (or OneDrive) and sign in with the owner's account. In <i>Off-site backup</i>, choose the Drive folder
+      (for example <i>G:\My Drive</i>), keep the time at 21:00, and press <b>Save</b>. The first copy is made and checked at once.</li>
+    <li>Press <b>Back up now</b> and check every location says <i>ok</i>.</li>
+  </ol>
+  <img class="shot" src="../docs/assets/img/backup.jpg" alt="">
+  <p class="cap">Settings → Backup: local copies, off-site copy and restore.</p>
+  <p>To move to a new computer: install the app, then use <i>Settings → Backup → Restore</i> and choose the off-site file. Ask RG Devs to move
+  your licence to the new computer.</p>
+</section>
+
+<section class="chapter">
+  <h2>11. Reports</h2>
+  <p><i>Reports</i> shows sales, transactions, profit estimate, payments by method (cash should match the drawer), sales by staff member and top
+  items, for any date range. <i>Controls report</i> lists voids, refunds, discounts, price changes, reprints and removed lines.</p>
+  <img class="shot" src="../docs/assets/img/reports.jpg" alt="">
+  <p class="cap">Reports for the day.</p>
+
+  <h2 style="margin-top:12pt">12. Your licence and updates</h2>
+  <ul>
+    <li><i>Settings → Licence</i> shows your plan and end date. <b>Buy more time</b> with M-Pesa at any time — it is added to what is left.</li>
+    <li>A week before a bought licence ends, the owner sees a reminder. When it ends, selling pauses (your data is kept) until more time is bought.</li>
+    <li>Updates download by themselves. When one is ready you will be asked — choose <b>Install now</b> when the shop is quiet, then <b>Yes</b> in
+      the Windows prompt. Other computers reconnect and show <i>please reload</i>.</li>
+  </ul>
+  <img class="shot" src="../docs/assets/img/about.jpg" alt="">
+  <p class="cap">Settings → About: version, edition, privacy policy and sample products.</p>
+</section>
+
+<section class="chapter">
+  <h2>13. Troubleshooting and support</h2>
+  <table>
+    <tr><th>Problem</th><th>What to do</th></tr>
+    <tr><td>“Already running” when opening the app</td><td>It is already open by the clock. Click its icon there. If another edition is running, quit it first.</td></tr>
+    <tr><td>Stations can't connect</td><td>Main computer on? Network set to <b>Private</b>? Firewall allowed for private networks? Try the IP address shown in <i>Settings → Stations</i>.</td></tr>
+    <tr><td>Licence says “checking” after a restart</td><td>Windows is still starting; wait a minute. Selling continues.</td></tr>
+    <tr><td>M-Pesa prompt not received</td><td>Check the number and that the phone is on. Wait for the screen to finish, then try again or type the M-Pesa code.</td></tr>
+    <tr><td>Forgot the owner password</td><td>On the main computer, use <i>Forgot password</i> with your recovery key.</td></tr>
+    <tr><td>Receipt prints too wide or small</td><td>Set the paper width in <i>Settings → Business</i> and the printer's paper size in Windows.</td></tr>
+  </table>
+  <h3>Getting help</h3>
+  <p>Email <b>rgdev.ke@gmail.com</b> with your business name and the last five characters of your licence key (shown in <i>Settings → Licence</i>).
+  If asked, send the log files from the tray icon → <i>Open data folder</i> → <i>logs</i>.</p>
+  <p class="muted">Privacy policy and terms: see the RG Devs Point of Sale website.</p>
+</section>
+</body>
+</html>

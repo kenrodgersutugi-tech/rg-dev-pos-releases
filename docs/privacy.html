@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy policy — RG Devs Point of Sale</title>
+  <meta name="description" content="How RG Devs Point of Sale handles information: what stays on your computer and what RG Devs receives.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="./"><img src="assets/img/icon-64.png" alt=""><span>RG Devs Point of Sale<small>by RG Devs, Meru</small></span></a>
+    <nav class="nav" style="display:flex"><a href="./">Home</a><a href="./#download">Download</a><a href="terms.html">Terms</a></nav>
+  </div>
+</header>
+<main class="legal">
+  <h1>Privacy policy</h1>
+  <p class="muted">RG Devs Point of Sale (also called RG Dev POS) · Effective 12 November 2026 · Replaces the version of 14 October 2026</p>
+
+  <div class="summary">
+    <b>The short version.</b> Your shop's records — sales, stock, customers, staff, patients — stay on your own computer. RG Devs receives only what is
+    needed to run your licence and, if you buy in the app, to take the M-Pesa payment. We never see your business records, passwords or backups, and
+    there is no advertising or tracking.
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>RG Devs is a software developer based in Meru, Kenya, and makes RG Devs Point of Sale (“the system”). For the information described in
+  section 4, RG Devs is the data controller. Contact: <a href="mailto:rgdev.ke@gmail.com">rgdev.ke@gmail.com</a>.</p>
+
+  <h2>2. What stays on your computer</h2>
+  <p>Everything your shop records is stored on the shop's main computer, in <code>C:\ProgramData\RG Dev POS</code>: sales and receipts, stock,
+  customers and credit accounts, staff accounts and the audit log, patient records if you use the healthcare add-on, your own M-Pesa (Daraja) keys
+  (encrypted), product pictures, local backups and logs. Other computers in the shop read this data over your local network; it is not sent to
+  RG Devs. Uninstalling the app keeps this folder on purpose; <i>Settings → About → Remove RG Dev POS data from this computer</i> deletes it.</p>
+
+  <h2>3. Your shop's responsibilities</h2>
+  <p>For the customer, staff and patient information you enter, your shop is the data controller under Kenya's Data Protection Act, 2019. You
+  decide what to record, who has access, and how long to keep it.</p>
+
+  <h2>4. What RG Devs receives</h2>
+  <h3>For your licence (activation, renewals, trial)</h3>
+  <ul>
+    <li>The licence key (we store only a one-way hash of it).</li>
+    <li>This computer's ID — a one-way code made from the Windows installation ID and the disk serial number (the raw values never leave the computer).</li>
+    <li>The computer's name and the app version.</li>
+    <li>For a free trial: the same, without a key. We keep the computer ID so each computer gets one trial.</li>
+    <li>A record of activations, renewals and refusals, with their dates.</li>
+  </ul>
+  <h3>When you buy a licence in the app</h3>
+  <ul>
+    <li>The M-Pesa phone number you type, used once to send the payment prompt through Safaricom. We store it only masked (for example 0712•••678).</li>
+    <li>Your shop's name (to name the licence), the plan, the amount, the M-Pesa receipt code and the result of the payment.</li>
+  </ul>
+  <h3>When you buy directly from RG Devs</h3>
+  <p>The business name and the contact person's name, phone and email, for the licence and receipts.</p>
+  <h3>For M-Pesa prompts sent by your shop</h3>
+  <p>If your shop connects its own Daraja keys, payment prompts go from your computer directly to Safaricom. Safaricom's confirmation comes back
+  through an RG Devs relay, which stores the request ID, result, M-Pesa receipt code, amount and a masked phone number, and deletes them after 7 days.</p>
+  <h3>What we never receive</h3>
+  <p>Your sales, stock, customer, staff or patient records; your backups; passwords or PINs; your own M-Pesa keys.</p>
+
+  <h2>5. Why we use it</h2>
+  <table>
+    <tr><th>Information</th><th>Purpose</th><th>Legal basis</th></tr>
+    <tr><td>Licence key, computer ID, name, version</td><td>Check the licence is valid for this computer; stop copying to other computers</td><td>Performance of the licence agreement</td></tr>
+    <tr><td>Trial computer ID</td><td>One free trial per computer</td><td>Legitimate interest (preventing abuse)</td></tr>
+    <tr><td>Masked phone, receipt code, amount, shop name</td><td>Take payment, issue or extend the licence, answer payment questions, tax records</td><td>Performance of the contract; legal obligation</td></tr>
+    <tr><td>Relay records (7 days)</td><td>Confirm your shop's M-Pesa payments</td><td>Performance of the contract</td></tr>
+  </table>
+
+  <h2>6. Where our records are stored</h2>
+  <p>Licence, purchase and relay records are stored with Neon (a database provider) in the European Union (Frankfurt, Germany), protected in
+  transit and at rest. Only RG Devs can access them.</p>
+
+  <h2>7. Off-site backups</h2>
+  <p>If you turn on off-site backup, an encrypted copy goes each day to a folder you choose — your Google Drive, OneDrive or a USB drive. It is
+  encrypted with your backup password before it leaves the computer; RG Devs cannot open it, and a lost password cannot be recovered.</p>
+
+  <h2>8. Other services the system uses</h2>
+  <ul>
+    <li><b>Safaricom</b> — M-Pesa payments, under your or RG Devs' agreement with Safaricom.</li>
+    <li><b>Google or Microsoft</b> — Google Drive or OneDrive, if you choose them for backups.</li>
+    <li><b>WhatsApp</b> — only when you choose to share a receipt that way.</li>
+    <li><b>GitHub</b> — downloads and updates of the Windows installer edition; it sees your computer's IP address.</li>
+    <li><b>Microsoft</b> — installation and updates of the Microsoft Store edition, under the Microsoft Privacy Statement.</li>
+  </ul>
+  <p>These providers may keep short technical logs, such as IP addresses. We do not sell or share your information for marketing.</p>
+
+  <h2>9. How long we keep it</h2>
+  <ul>
+    <li>M-Pesa relay records: 7 days.</li>
+    <li>A new licence key waiting to be collected by the buying computer: at most 7 days.</li>
+    <li>Licence, trial and purchase records: while the licence exists, then as long as tax law requires for purchase records.</li>
+    <li>Your shop's own records: on your computer, until you delete them.</li>
+  </ul>
+
+  <h2>10. How the system protects data</h2>
+  <p>Encrypted connections between your computers using your shop's own certificate; stations must be approved; passwords and PINs stored only as
+  secure hashes; role-based permissions checked on the main computer; an audit log of sensitive actions; encrypted backups.</p>
+
+  <h2>11. Your rights</h2>
+  <p>Under Kenya's Data Protection Act, 2019 you may ask to access, correct or delete information RG Devs holds about you, or object to its use.
+  Email <a href="mailto:rgdev.ke@gmail.com">rgdev.ke@gmail.com</a>. You may also complain to the Office of the Data Protection Commissioner
+  (<a href="https://www.odpc.go.ke">www.odpc.go.ke</a>).</p>
+
+  <h2>12. Children</h2>
+  <p>The system is for businesses and is not directed at children.</p>
+
+  <h2>13. Changes</h2>
+  <p>We will post any change here with a new effective date, and tell licensed shops about important changes in the app or by message.</p>
+
+  <h2>14. Contact</h2>
+  <p>RG Devs, Meru, Kenya · <a href="mailto:rgdev.ke@gmail.com">rgdev.ke@gmail.com</a></p>
+</main>
+<footer class="site-foot"><div class="wrap"><div class="copy" style="border:0;margin:0;padding:0">© 2026 RG Devs, Meru, Kenya · <a href="./">Home</a> · <a href="terms.html">Terms and conditions</a></div></div></footer>
+</body>
+</html>

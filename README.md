@@ -1,8 +1,9 @@
-# RG Dev POS — releases
+# RG Devs Point of Sale — website and downloads
 
-Installers and automatic updates for RG Dev POS.
+- **Website:** https://kenrodgersutugi-tech.github.io/rg-dev-pos-releases/ (GitHub Pages, from `docs/`)
+- **Download:** the latest `RG-Dev-POS-Setup-x.y.z.exe` from [Releases](../../releases/latest). Installed shops update automatically.
+- **Setup guide:** [`docs/downloads/RG-Devs-POS-Setup-Guide.pdf`](docs/downloads/RG-Devs-POS-Setup-Guide.pdf) (source: `guide-src/guide.html`)
+- [Privacy policy](https://kenrodgersutugi-tech.github.io/rg-dev-pos-releases/privacy.html) ·
+  [Terms and conditions](https://kenrodgersutugi-tech.github.io/rg-dev-pos-releases/terms.html)
 
-- **New shop:** download the latest `RG-Dev-POS-Setup-x.y.z.exe` from [Releases](../../releases) and follow the install guide supplied by RG Dev.
-- **Existing shops:** update automatically in the background when online.
-
-Source code is private. Licensed software © RG Dev.
+Source code is private. Licensed software © 2026 RG Devs, Meru, Kenya.
