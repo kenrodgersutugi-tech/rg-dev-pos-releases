@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy policy (Android) — RG Dev POS</title>
+  <meta name="description" content="How RG Dev POS for Android handles information: what stays on the phone, what Business mode keeps in the RG Devs cloud, and your rights.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="./"><img src="assets/img/icon-64.png" alt=""><span>RG Devs Point of Sale<small>by RG Devs, Meru</small></span></a>
+    <nav class="nav" style="display:flex"><a href="android.html">Android</a><a href="android.html#download">Download</a><a href="android-terms.html">Terms</a></nav>
+  </div>
+</header>
+<main class="legal">
+  <h1>Privacy policy — RG Dev POS for Android</h1>
+  <p class="muted">RG Dev POS for Android (package <code>ke.rgdevs.pos</code>) · Effective 12 November 2026. For the Windows edition, see <a href="privacy.html">its privacy policy</a>.</p>
+
+  <div class="summary">
+    <b>The short version.</b> In <b>Just me</b> mode, your shop's records stay on your phone. In <b>Business</b> mode, a copy of the business's records is
+    kept in the RG Devs cloud so the owner's and staff's phones stay in step. We use it only to run the service for you. We never sell it,
+    never use it for advertising, and there is no tracking or analytics in the app.
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>RG Devs is a software developer based in Meru, Kenya, and makes RG Dev POS (“the app”). Contact: <a href="mailto:rgdev.ke@gmail.com">rgdev.ke@gmail.com</a>.</p>
+
+  <h2>2. Who is responsible for what</h2>
+  <ul>
+    <li><b>Your shop</b> decides what to record about its customers, staff and M-Pesa customers, and is the <b>data controller</b> for that information under
+      Kenya's Data Protection Act, 2019.</li>
+    <li>In Business mode, <b>RG Devs</b> stores and transfers that information on your shop's behalf, as a <b>data processor</b>, only to run the service.</li>
+    <li>For the owner's account, devices, licence and payment records, <b>RG Devs</b> is the data controller.</li>
+  </ul>
+
+  <h2>3. What stays on the phone</h2>
+  <p>Everything the app records is stored on the phone, in storage only the app can read:</p>
+  <ul>
+    <li>sales and receipts, stock, customers and credit accounts</li>
+    <li>expenses and shifts, the M-Pesa agent book</li>
+    <li>staff and the audit log</li>
+    <li>settings, product photos</li>
+    <li>your own M-Pesa (Daraja) keys, encrypted with the phone's secure key store</li>
+  </ul>
+  <p>Android's own phone backup is switched off for this data; use the app's encrypted backup instead. Uninstalling the app deletes it from the phone.</p>
+
+  <h2>4. What RG Devs receives</h2>
+  <h3>In every mode</h3>
+  <ul>
+    <li><b>Update checks:</b> the Android download edition asks GitHub for the latest version and downloads updates from GitHub. GitHub sees the phone's IP address.</li>
+    <li><b>M-Pesa prompts</b> (only if your shop connects its own Daraja keys): payment prompts go from the phone straight to Safaricom. Safaricom's confirmation comes back
+      through an RG Devs relay, which keeps the request ID, result, M-Pesa receipt code, amount, a masked phone number (for example 2547••••678) and the time,
+      and deletes them within 24 hours.</li>
+    <li><b>Crash reports:</b> only if you choose to send one, by email or WhatsApp, after seeing what it contains.</li>
+  </ul>
+  <h3>In Business mode</h3>
+  <ul>
+    <li><b>The owner's Google account:</b> the name, email address and Google account ID that Google shares when you choose <i>Sign in with Google</i>.
+      We don't receive your Google password or anything else from your Google account.</li>
+    <li><b>Devices:</b> a random ID for each phone in the business, its name, model, app version and when it last connected.</li>
+    <li><b>The business's records</b>, kept in step between its phones:
+      <ul>
+        <li>the business profile and settings</li>
+        <li>products, prices and stock movements</li>
+        <li>sales, payments, refunds, shifts and expenses</li>
+        <li>customers and credit (names, phone numbers, balances)</li>
+        <li>the M-Pesa agent book (transaction codes, amounts, customer or agent names)</li>
+        <li>staff names and roles, and the audit log</li>
+        <li>anything imported from a spreadsheet</li>
+      </ul></li>
+    <li><b>PINs:</b> a staff or owner PIN itself is never sent or stored. Only a salted, slow one-way hash of it is kept in step, so staff can log
+      in on any of the business's phones; the PIN can't be worked back out from it.</li>
+    <li><b>Never sent:</b> your recovery code, your Daraja keys, unfinished carts, and product photos.</li>
+  </ul>
+  <h3>When you buy a licence</h3>
+  <ul>
+    <li>The business name, the plan and amount, the M-Pesa phone number used for the payment prompt (stored masked), the M-Pesa receipt code and the result.</li>
+  </ul>
+
+  <h2>5. Why we use it</h2>
+  <table>
+    <tr><th>Information</th><th>Purpose</th><th>Legal basis</th></tr>
+    <tr><td>Owner's Google name, email, account ID</td><td>Sign the owner in; recover the business on a new phone</td><td>Performance of the contract</td></tr>
+    <tr><td>Device ID, name, model, app version</td><td>Let only the business's own phones connect; show the owner which phones are active; support</td><td>Performance of the contract; legitimate interest (security)</td></tr>
+    <tr><td>Business records (Business mode)</td><td>Keep the business's phones in step and show the owner the shop live, as your shop instructs</td><td>On behalf of your shop (processor)</td></tr>
+    <tr><td>Licence and payment records</td><td>Issue and renew licences, answer payment questions, tax records</td><td>Performance of the contract; legal obligation</td></tr>
+    <tr><td>Relay records (24 hours)</td><td>Confirm your shop's M-Pesa payments</td><td>Performance of the contract</td></tr>
+  </table>
+
+  <h2>6. Where it is stored</h2>
+  <ul>
+    <li><b>Where:</b> Business-mode records, account, licence and relay records are stored with Neon (a database provider) in the European Union (Frankfurt, Germany).</li>
+    <li><b>Protection:</b> they are encrypted in transit (HTTPS) and at rest.</li>
+    <li><b>Access:</b> each business's records can be read only by that business's own phones and by RG Devs for support you ask for.</li>
+    <li><b>Outside Kenya:</b> because this is outside Kenya, the transfer relies on the safeguards required by section 48 of the Data Protection Act (the EU's data
+      protection law and the provider's contractual commitments).</li>
+  </ul>
+
+  <h2>7. How long we keep it</h2>
+  <ul>
+    <li>Business-mode records: while the business stays in Business mode.</li>
+    <li>If the owner deletes the business, or switches back to Just me and asks us to, the cloud copy is erased within 30 days. The records on each phone are not touched.</li>
+    <li>Devices removed by the owner: their access is cut off straight away.</li>
+    <li>M-Pesa relay records: 24 hours.</li>
+    <li>Licence and payment records: while the licence exists, then as long as tax law requires.</li>
+  </ul>
+
+  <h2>8. How the app protects data</h2>
+  <ul>
+    <li>PINs are stored only as salted, slow hashes, and wrong tries lock the PIN for a while.</li>
+    <li>Each phone has its own secret key, which the owner can withdraw.</li>
+    <li>Role-based permissions, and an audit log of sensitive actions.</li>
+    <li>Encrypted backups.</li>
+    <li>Updates are checked against an RG Devs signature before they are offered, and Android checks that every update is signed by RG Devs.</li>
+  </ul>
+
+  <h2>9. Permissions the app asks for</h2>
+  <p>Each is asked for only when you first use the feature that needs it:</p>
+  <ul>
+    <li>camera: scanning barcodes</li>
+    <li>Bluetooth (on older phones also location): receipt printers</li>
+    <li>notifications: low stock, expiry, backups, updates</li>
+    <li>internet: M-Pesa, updates and Business mode</li>
+    <li>(download edition) installing updates</li>
+  </ul>
+  <p>No contacts, SMS, call log or storage permissions. Pasting an M-Pesa SMS only reads what you copy yourself.</p>
+
+  <h2>10. Other services</h2>
+  <ul>
+    <li><b>Google</b> — Sign in with Google, and Google Drive if you choose it for backups.</li>
+    <li><b>Safaricom</b> — M-Pesa payments.</li>
+    <li><b>GitHub</b> — app downloads and updates.</li>
+    <li><b>Neon</b> — cloud database.</li>
+    <li><b>WhatsApp</b> and other apps — only when you choose to share a receipt or report.</li>
+  </ul>
+  <p>These providers may keep short technical logs such as IP addresses. We do not sell or share information for marketing.</p>
+
+  <h2>11. Your rights</h2>
+  <ul>
+    <li>Under Kenya's Data Protection Act, 2019 you may ask to access, correct or delete information about you, or object to its use.</li>
+    <li>Customers of a shop should contact the shop first, as it controls their information.</li>
+    <li>Email <a href="mailto:rgdev.ke@gmail.com">rgdev.ke@gmail.com</a>.</li>
+    <li>You may also complain to the Office of the Data Protection Commissioner (<a href="https://www.odpc.go.ke">www.odpc.go.ke</a>).</li>
+  </ul>
+
+  <h2>12. Children</h2>
+  <p>The app is for businesses and is not directed at children.</p>
+
+  <h2>13. Changes</h2>
+  <p>We will post any change here with a new effective date, and show important changes in the app.</p>
+
+  <h2>14. Contact</h2>
+  <p>RG Devs, Meru, Kenya · <a href="mailto:rgdev.ke@gmail.com">rgdev.ke@gmail.com</a></p>
+</main>
+<footer class="site-foot"><div class="wrap"><div class="copy" style="border:0;margin:0;padding:0">© 2026 RG Devs, Meru, Kenya · <a href="android.html">RG Dev POS for Android</a> · <a href="android-terms.html">Terms and conditions</a></div></div></footer>
+</body>
+</html>
