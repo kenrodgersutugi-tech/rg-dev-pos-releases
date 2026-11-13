@@ -70,10 +70,15 @@
         <div class="download-main">
           <div class="eyebrow" style="color:#bfe3d4">Download</div>
           <h2>RG Dev POS for Android</h2>
-          <p>Open this page on the phone you'll use and tap the button.</p>
+          <p>Open this page on the phone you'll use and tap the button. Short link to share: <a href="get/" style="color:#fff"><b>kenrodgersutugi-tech.github.io/rg-dev-pos-releases/get</b></a></p>
           <a id="dl-btn" class="btn btn-primary" href="https://github.com/kenrodgersutugi-tech/rg-dev-pos-android-releases/releases/latest/download/RG-Dev-POS.apk">Download APK</a>
           <p class="meta" id="dl-meta">Latest version · Android 8 or newer · about 4 MB</p>
           <p class="meta">Google Play edition: coming soon.</p>
+          <div class="desk-qr" id="desk-qr" style="display:none;margin-top:18px">
+            <p class="meta" style="margin-bottom:8px">On a computer? Scan with your phone's camera:</p>
+            <img src="assets/img/android-qr.svg" alt="QR code to install on a phone" style="width:180px;height:180px;background:#fff;border-radius:12px;padding:6px">
+          </div>
+          <p style="margin-top:14px"><a class="btn btn-ghost" style="background:transparent;color:#fff;border-color:#fff" href="https://wa.me/?text=Install%20RG%20Dev%20POS%20(till%20and%20M-Pesa%20agent%20book)%3A%20https%3A%2F%2Fkenrodgersutugi-tech.github.io%2Frg-dev-pos-releases%2Fget%2F">Share on WhatsApp</a></p>
         </div>
         <div id="install">
           <h3>How to install</h3>
@@ -81,7 +86,7 @@
             <li>Tap <b>Download APK</b>. If Chrome warns that the file may be harmful, tap <b>Download anyway</b>.</li>
             <li>Open the downloaded file. Android asks to <b>allow installs from this source</b>: turn it on for Chrome, then go back.</li>
             <li>Tap <b>Install</b>. If Google Play Protect says the app is unknown, tap <b>More details → Install anyway</b>. It's unknown only because it isn't on the Play Store yet.</li>
-            <li>Open RG Dev POS and follow the short setup.</li>
+            <li>Open RG Dev POS and follow the short setup. <b>Staff joining a shop:</b> on the first setup screen tap <b>Join a business → I'm staff</b> and type the owner's 6-character code.</li>
           </ol>
           <p class="muted small">Updates: the app checks for new versions, downloads them by itself and shows <i>Update ready</i>. Tap <b>Install</b> and confirm. Your data is kept.</p>
         </div>
@@ -95,7 +100,7 @@
       <details><summary>Does it need internet?</summary><p>No, for selling, stock, the agent book and reports. Internet is used for M-Pesa payment prompts, checking for updates, and in Business mode to keep your phones in step and show the owner the shop live. Sales are never held up waiting for the internet.</p></details>
       <details><summary>What's the difference between "Just me" and Business?</summary><p><b>Just me</b> runs on one phone with no account, and nothing leaves the phone except M-Pesa prompts and update checks. <b>Business</b> is for owners with staff or several phones: the owner signs in with Google, staff get their own PIN, and the business's records are kept in step through the RG Devs cloud so the owner sees everything live. You can move from Just me to Business later and keep all your records.</p></details>
       <details><summary>Can my staff see everything?</summary><p>No. The owner gives each staff member a role (manager, cashier or M-Pesa agent) and can switch individual permissions on or off. Profit, reports, settings and spreadsheet uploads are for the owner unless they allow otherwise.</p></details>
-      <details><summary>Can I bring my records from a spreadsheet?</summary><p>Yes. The owner can upload the RG Dev POS spreadsheet template (sales, expenses, M-Pesa book, float top-ups, opening balances) and the app reads it in.</p></details>
+      <details><summary>Can I bring my records from a spreadsheet?</summary><p>Yes. In <b>More → Import spreadsheet</b> the owner picks the RG Dev POS workbook (.xlsx) and sees exactly what it would add before anything is saved: past sales, expenses, damaged stock, the M-Pesa book, float top-ups, funding and opening balances. Importing a newer copy later adds only the new rows.</p></details>
       <details><summary>Where is my data kept?</summary><p>On your phone. In Business mode, a copy is also kept with RG Devs' cloud provider in the EU so that your phones and the owner's phone stay in step. See the <a href="android-privacy.html">Android privacy policy</a>.</p></details>
       <details><summary>Is the Windows version the same?</summary><p>They're sister apps with the same ideas. <a href="./">RG Devs Point of Sale for Windows</a> runs a whole shop from one computer; the Android app runs on phones and tablets.</p></details>
     </div>
@@ -117,6 +122,8 @@
 </footer>
 
 <script>
+// Computers: show a QR code so the phone can open the install page.
+if (!/Android|iPhone|iPad|Mobile/i.test(navigator.userAgent)) document.getElementById('desk-qr').style.display = 'block';
 // Show the newest version, size and date on the download button.
 fetch('https://api.github.com/repos/kenrodgersutugi-tech/rg-dev-pos-android-releases/releases/latest')
   .then((r) => (r.ok ? r.json() : Promise.reject()))

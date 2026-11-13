@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Install RG Dev POS</title>
+  <meta name="description" content="Install RG Dev POS on your Android phone: one tap to download, three steps to install. Free.">
+  <meta property="og:title" content="Install RG Dev POS on your phone">
+  <meta property="og:description" content="Point of sale and M-Pesa agent book for Android. Works offline. Tap to download and install.">
+  <meta property="og:image" content="https://kenrodgersutugi-tech.github.io/rg-dev-pos-releases/assets/img/icon-192.png">
+  <meta name="theme-color" content="#0b6e4f">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="apple-touch-icon" href="../assets/img/icon-192.png">
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    body { background: var(--bg-2); }
+    .get { max-width: 560px; margin: 0 auto; padding: 24px 16px 48px; }
+    .get-head { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .get-head img { width: 56px; height: 56px; border-radius: 14px; }
+    .get-head h1 { font-size: 1.6rem; margin: 0; }
+    .get-head p { margin: 0; color: var(--muted); }
+    .big { display: block; width: 100%; text-align: center; font-size: 1.15rem; padding: 18px 20px; border-radius: 14px; }
+    .meta { color: var(--muted); font-size: 0.9rem; text-align: center; margin: 8px 0 0; }
+    .steps { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 12px; }
+    .steps li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+    .num { width: 32px; height: 32px; border-radius: 50%; background: var(--brand); color: #fff; display: grid; place-items: center; font-weight: 700; }
+    .steps b { color: var(--ink); }
+    .steps p { margin: 0; }
+    .note { background: var(--brand-soft); border-radius: var(--radius); padding: 16px; margin-top: 16px; }
+    .note h2 { font-size: 1.05rem; margin: 0 0 6px; }
+    .note p { margin: 0; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+    .row .btn { flex: 1 1 200px; text-align: center; }
+    .qr { display: none; text-align: center; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+    .qr img { width: 220px; height: 220px; margin: 8px auto 0; }
+    .qr.show { display: block; }
+    .foot { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 28px; }
+  </style>
+</head>
+<body>
+<main class="get">
+  <div class="get-head">
+    <img src="../assets/img/icon-192.png" alt="">
+    <div>
+      <h1>RG Dev POS</h1>
+      <p>Till, stock and M-Pesa agent book for your phone</p>
+    </div>
+  </div>
+
+  <!-- Shown on computers: install happens on the phone. -->
+  <div class="qr" id="qr">
+    <b>On a computer?</b> Scan this with your phone's camera to open this page there.
+    <img src="../assets/img/android-qr.svg" alt="QR code for this page">
+  </div>
+
+  <a id="dl" class="btn btn-primary big" href="https://github.com/kenrodgersutugi-tech/rg-dev-pos-android-releases/releases/latest/download/RG-Dev-POS.apk">Download for Android</a>
+  <p class="meta" id="meta">Free · Android 8 or newer · about 4 MB</p>
+
+  <ol class="steps">
+    <li><span class="num">1</span><p><b>Tap Download.</b> If Chrome says the file may be harmful, tap <b>Download anyway</b>.</p></li>
+    <li><span class="num">2</span><p><b>Open the file</b> from the download message. If Android asks, turn on <b>Allow from this source</b> for Chrome, then go back.</p></li>
+    <li><span class="num">3</span><p><b>Tap Install.</b> If Play Protect calls it unknown, tap <b>More details → Install anyway</b>. It's only unknown because it isn't on the Play Store yet.</p></li>
+  </ol>
+
+  <div class="note">
+    <h2>Joining a shop as staff?</h2>
+    <p>Install, open the app, and on the first setup screen tap <b>Join a business → I'm staff</b>. Type the 6-character code the owner sees under <i>More → Business mode → Phones → Add a phone</i>.</p>
+  </div>
+
+  <div class="row">
+    <a class="btn btn-ghost" id="share" href="https://wa.me/?text=Install%20RG%20Dev%20POS%20(till%20and%20M-Pesa%20agent%20book)%3A%20https%3A%2F%2Fkenrodgersutugi-tech.github.io%2Frg-dev-pos-releases%2Fget%2F">Share on WhatsApp</a>
+    <a class="btn btn-ghost" href="../android.html">What it does</a>
+  </div>
+
+  <p class="foot">The app updates itself: when a new version is ready it shows <i>Update ready</i>. Your records are kept.<br>
+    Help: <a href="mailto:rgdev.ke@gmail.com">rgdev.ke@gmail.com</a> · <a href="../android-privacy.html">Privacy</a> · <a href="../android-terms.html">Terms</a></p>
+</main>
+
+<script>
+  // Computers get the QR code first; phones go straight to the button.
+  if (!/Android|iPhone|iPad|Mobile/i.test(navigator.userAgent)) document.getElementById('qr').classList.add('show');
+  if (/iPhone|iPad/i.test(navigator.userAgent)) document.getElementById('meta').textContent = 'This app is for Android phones and tablets. iPhone isn’t supported.';
+  // Point the button at the newest version and show its number and size.
+  fetch('https://api.github.com/repos/kenrodgersutugi-tech/rg-dev-pos-android-releases/releases/latest')
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((rel) => {
+      const apk = (rel.assets || []).find((a) => /^RG-Dev-POS-[\d.]+\.apk$/i.test(a.name));
+      if (!apk) return;
+      document.getElementById('dl').href = apk.browser_download_url;
+      document.getElementById('dl').textContent = 'Download for Android (' + rel.tag_name.replace(/^v/, 'v') + ')';
+      if (!/iPhone|iPad/i.test(navigator.userAgent)) {
+        document.getElementById('meta').textContent = 'Free · Android 8 or newer · ' + (apk.size / 1048576).toFixed(1) + ' MB';
+      }
+    })
+    .catch(() => {});
+</script>
+</body>
+</html>
