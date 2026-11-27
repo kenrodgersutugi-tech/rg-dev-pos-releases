@@ -44,7 +44,7 @@
     <p>RG Devs Point of Sale — install, activate and start selling</p>
   </div>
   <img class="cover-shot" src="../docs/assets/img/till.jpg" alt="">
-  <div class="cover-foot"><span><b>RG Devs</b> · Meru, Kenya · rgdev.ke@gmail.com</span><span>Version 1.8 · November 2026</span></div>
+  <div class="cover-foot"><span><b>RG Devs</b> · Meru, Kenya · rgdev.ke@gmail.com</span><span>Version 1.11 · November 2026</span></div>
 </section>
 
 <section class="chapter">
@@ -57,10 +57,12 @@
     <li>Products and stock</li>
     <li>Staff, managers and approvals</li>
     <li>Making a sale and printing receipts</li>
+    <li>Your receipt: logo, M-Pesa line and printer</li>
+    <li>Barcode scanner and shelf labels</li>
     <li>M-Pesa at the till</li>
     <li>Connecting other computers (stations)</li>
     <li>Backups — please don't skip</li>
-    <li>Reports</li>
+    <li>Reports and the PDF business report</li>
     <li>Your licence and updates</li>
     <li>Troubleshooting and support</li>
   </ol>
@@ -158,19 +160,60 @@
   <p class="cap">The till: products on the left, the current sale and total on the right.</p>
   <img class="shot" src="../docs/assets/img/payment.jpg" alt="">
   <p class="cap">Payment: split payments are allowed; change is calculated for you.</p>
-  <div class="tip">Paper width (58 or 80 mm) and what appears on the receipt are set in <i>Settings → Business</i>. No printer? Choose
-  <i>Microsoft Print to PDF</i> to save the receipt.</div>
+  <div class="tip">Paper width (58 or 80 mm) and what appears on the receipt are set in <i>Settings → Receipt</i> (next chapter). No printer?
+  Choose <i>Microsoft Print to PDF</i> to save the receipt. If a receipt does not print, the sale is still saved: the till shows a plain
+  receipt you can print again or copy.</div>
 </section>
 
 <section class="chapter">
-  <h2>8. M-Pesa at the till</h2>
+  <h2>8. Your receipt: logo, M-Pesa line and printer</h2>
+  <p>Open <i>Settings → Receipt</i> and tick <b>Custom receipt layout</b>. The preview on the right shows exactly what will print.</p>
+  <ol>
+    <li><b>Logo:</b> upload your logo (a black-and-white logo prints best). It is turned into sharp printer dots automatically.</li>
+    <li><b>Header and footer lines:</b> e.g. opening hours, "Karibu tena!", your return policy.</li>
+    <li><b>Pay with M-Pesa line:</b> choose Buy Goods Till or Paybill and enter the number.</li>
+    <li><b>Show:</b> tick what you want — cashier, customer, item codes, discounts, M-Pesa code, a QR code.</li>
+    <li>Press <b>Save</b>, then <b>Test print</b> on every computer.</li>
+  </ol>
+  <img class="shot" src="../docs/assets/img/receipt.jpg" alt="">
+  <p class="cap">The receipt designer with its live preview.</p>
+  <h3>This computer's printer</h3>
+  <p>Each computer keeps its own <b>paper width</b> (58 or 80 mm) and text size. On the main computer you can also choose the
+  <b>printer</b>: receipts then print straight away without the print window. Other computers choose their printer once in the print window.
+  Receipts printed again are marked <b>COPY</b> with the time. <i>Reset to Classic</i> brings back the original receipt.</p>
+</section>
+
+<section class="chapter">
+  <h2>9. Barcode scanner and shelf labels</h2>
+  <p>Tick <i>Settings → Business → Barcodes &amp; shelf labels</i> (already on for new shops). Plug in a USB barcode scanner — test it in
+  Notepad first: each scan should type the number and start a new line.</p>
+  <ul>
+    <li><b>Scan anywhere on the till.</b> The cursor does not need to be in the search box.</li>
+    <li><b>Unknown barcode:</b> the till beeps and shows <i>Barcode not found</i>. A manager finds the product, picks the pack the barcode is on
+      (single, packet, carton…) and presses <i>Add barcode and sell</i>. A cashier calls the manager to type their PIN.</li>
+    <li><b>Scanned wrongly?</b> A misread barcode beeps and asks you to scan again instead of selling the wrong thing.</li>
+    <li><b>Several barcodes:</b> in the product, each pack can have more barcodes (<i>Another barcode → Add</i>). A carton's barcode sells a
+      carton; a single's sells one.</li>
+    <li><b>No barcode?</b> <i>Generate in-store barcode</i> gives the product a number starting with 200 for its shelf label.</li>
+  </ul>
+  <h3>Shelf labels</h3>
+  <p><i>Inventory → Shelf labels</i>: tick products (or a category), choose the label size — A4 sheet of 24 or 40, or a label-printer roll of
+  50 × 30 or 40 × 25 mm — and press <b>Print</b>. After printing, answer <i>Yes, record them</i>. When prices change, choose
+  <b>Prices changed since last print</b> to reprint only the labels that are now wrong. For A4 sheets set the print window's scale to
+  <b>100 %</b> (Actual size).</p>
+  <img class="shot" src="../docs/assets/img/labels.jpg" alt="">
+  <p class="cap">Shelf labels with a preview of name, price, pack and barcode.</p>
+</section>
+
+<section class="chapter">
+  <h2>10. M-Pesa at the till</h2>
   <p>Without any setup, choose <b>M-Pesa</b> as the payment and type the code from the customer's M-Pesa message.</p>
   <p>To send the payment prompt straight to the customer's phone, connect your own Safaricom Daraja account in <i>Settings → M-Pesa</i>:
   Consumer Key, Consumer Secret, Passkey, and your Paybill or Till (with store number). Press <b>Test connection</b>. A payment then counts only
   after Safaricom confirms it.</p>
   <div class="tip">Your Daraja keys are stored encrypted on the main computer only — never on station computers, and never sent to RG Devs.</div>
 
-  <h2 style="margin-top:12pt">9. Connecting other computers (stations)</h2>
+  <h2 style="margin-top:12pt">11. Connecting other computers (stations)</h2>
   <ol>
     <li>Connect the other computer to the same Wi-Fi or network as the main computer.</li>
     <li>On the main computer open <i>Settings → Stations</i>. It shows the setup address, for example <b>http://rgpos.local:4781</b>.</li>
@@ -187,7 +230,7 @@
 </section>
 
 <section class="chapter">
-  <h2>10. Backups — please don't skip</h2>
+  <h2>12. Backups — please don't skip</h2>
   <p>The system copies your data every hour (when something changed), every day, week and month, on the main computer. To survive a dead or
   stolen computer you also need an <b>off-site</b> copy:</p>
   <ol>
@@ -204,13 +247,17 @@
 </section>
 
 <section class="chapter">
-  <h2>11. Reports</h2>
+  <h2>13. Reports and the PDF business report</h2>
   <p><i>Reports</i> shows sales, transactions, profit estimate, payments by method (cash should match the drawer), sales by staff member and top
   items, for any date range. <i>Controls report</i> lists voids, refunds, discounts, price changes, reprints and removed lines.</p>
   <img class="shot" src="../docs/assets/img/reports.jpg" alt="">
   <p class="cap">Reports for the day.</p>
+  <h3>PDF business report</h3>
+  <p>Choose the dates and press <b>Export PDF</b>. You get an A4 report with your shop's name, details and logo: sales, profit and loss,
+  payment methods, staff, top items and a daily chart, with prepared-by and signature lines. On the main computer it is saved straight to a
+  PDF file (Documents by default); on other computers choose <i>Save as PDF</i> in the print window.</p>
 
-  <h2 style="margin-top:12pt">12. Your licence and updates</h2>
+  <h2 style="margin-top:12pt">14. Your licence and updates</h2>
   <ul>
     <li><i>Settings → Licence</i> shows your plan and end date. <b>Buy more time</b> with M-Pesa at any time — it is added to what is left.</li>
     <li>A week before a bought licence ends, the owner sees a reminder. When it ends, selling pauses (your data is kept) until more time is bought.</li>
@@ -222,7 +269,7 @@
 </section>
 
 <section class="chapter">
-  <h2>13. Troubleshooting and support</h2>
+  <h2>15. Troubleshooting and support</h2>
   <table>
     <tr><th>Problem</th><th>What to do</th></tr>
     <tr><td>“Already running” when opening the app</td><td>It is already open by the clock. Click its icon there. If another edition is running, quit it first.</td></tr>
@@ -230,7 +277,9 @@
     <tr><td>Licence says “checking” after a restart</td><td>Windows is still starting; wait a minute. Selling continues.</td></tr>
     <tr><td>M-Pesa prompt not received</td><td>Check the number and that the phone is on. Wait for the screen to finish, then try again or type the M-Pesa code.</td></tr>
     <tr><td>Forgot the owner password</td><td>On the main computer, use <i>Forgot password</i> with your recovery key.</td></tr>
-    <tr><td>Receipt prints too wide or small</td><td>Set the paper width in <i>Settings → Business</i> and the printer's paper size in Windows.</td></tr>
+    <tr><td>Receipt prints too wide or small</td><td>Set the paper width in <i>Settings → Receipt → This computer's printer</i> and the printer's paper size in Windows.</td></tr>
+    <tr><td>Scanner types the number but nothing is added</td><td>Check <i>Settings → Business → Barcodes &amp; shelf labels</i> is ticked and the scanner sends Enter after each scan (see its manual).</td></tr>
+    <tr><td>Shelf labels don't line up with the sheet</td><td>In the print window set scale to 100 % / Actual size and margins to None.</td></tr>
   </table>
   <h3>Getting help</h3>
   <p>Email <b>rgdev.ke@gmail.com</b> with your business name and the last five characters of your licence key (shown in <i>Settings → Licence</i>).
